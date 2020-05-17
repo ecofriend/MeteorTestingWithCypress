@@ -21,9 +21,13 @@ In another terminal
 I'll go through the whole steps of creating a Vue-based Meteor app from scratch.
 
 > meteor create MyVueApp
+
 > meteor npm install --save vue
+
 > meteor add akryum:vue-component static-html
+
 > meteor remove blaze-html-templates
+
 > meteor npm install cypress --save-dev
 
 I believe you could do just "npm install... " but just in case you don't have npm installed globally.
