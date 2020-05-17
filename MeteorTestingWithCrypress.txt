@@ -1,0 +1,82 @@
+https://dev.to/splitified/test-your-meteor-app-with-docker-jenkins-and-cypress-part-1-12om
+https://github.com/bahmutov/cypress-vue-unit-test
+https://github.com/cypress-io/cypress-webpack-preprocessor
+https://learntdd.in/vue/
+http://kakts-tec.hatenablog.com/entry/2018/10/05/012645
+https://qiita.com/7110/items/0721525ed6ccc263768b
+https://codingitwrong.com/2018/03/04/comparing-vue-component-testing-tools.html
+
+
+- meteor npm install --save vue
+- meteor add akryum:vue-component static-html
+- meteor remove blaze-html-templates
+- npm install cypress --save-dev
+- package.json -> 
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer",
+    "cy-gui": "cypress open",
+    "cy-headless": "cypress run"
+  },
+- meteor npm run cy-gui "will create cypress folder and cypress.json file"
+- mv cypress/ tests/cypress
+- cypress.json ->
+{
+  "fixturesFolder": "tests/cypress/fixtures",
+  "integrationFolder": "tests/cypress/integration",
+  "pluginsFile": "tests/cypress/plugins/index.js",
+  "screenshotsFolder": "tests/cypress/screenshots",
+  "supportFile": "tests/cypress/support/index.js",
+  "videosFolder": "tests/cypress/videos"
+}
+- "create test.js in tests/cypress/integration"
+- meteor
+- meteor npm run cy-gui
+- "run tests"
+- meteor npm install cypress-vue-unit-test @cypress/webpack-preprocessor @babel/core @babel/preset-env babel-loader webpack vue-loader vue-template-compiler css-loader chai --save-dev
+- cypress.json ->
+  "experimentalComponentTesting": true
+- \tests\cypress\plugins\index.js ->
+const VueLoaderPlugin = require("vue-loader/lib/plugin");
+const webpack = require("@cypress/webpack-preprocessor");
+const webpackOptions = {
+  module: {
+    rules: [
+      {
+        test: /\.vue$/,
+        loader: "vue-loader",
+      },
+      {
+        test: /\.js$/,
+        loader: "babel-loader",
+      },
+      {
+        test: /\.css$/,
+        //use: ["style-loader", "css-loader"],
+        use: "css-loader",
+      },
+    ],
+  },
+  resolve: {
+    extensions: [".js", ".vue"],
+    alias: {
+      vue$: "vue/dist/vue.esm.js",
+    },
+  },
+  plugins: [new VueLoaderPlugin()],
+};
+
+const options = {
+  // send in the options from your webpack.config.js, so it works the same
+  // as your app's code
+  webpackOptions,
+  watchOptions: {},
+};
+
+module.exports = (on) => {
+  on("file:preprocessor", webpack(options));
+};
+-
+ 

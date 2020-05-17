@@ -1,0 +1,38 @@
+{
+  "name": "MeteorTestingWithCypress",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer",
+    "cy-gui": "cypress open",
+    "cy-headless": "cypress run"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.8.3",
+    "jquery": "^3.4.1",
+    "meteor-node-stubs": "^1.0.0",
+    "vue": "^2.6.11"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "client/main.js",
+      "server": "server/main.js"
+    },
+    "testModule": "tests/main.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@cypress/webpack-preprocessor": "^5.2.1",
+    "babel-loader": "^8.1.0",
+    "chai": "^4.2.0",
+    "css-loader": "^3.5.3",
+    "cypress": "^4.5.0",
+    "cypress-vue-unit-test": "^2.0.1",
+    "vue-loader": "^15.9.2",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.43.0"
+  }
+}
