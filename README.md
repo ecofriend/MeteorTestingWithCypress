@@ -112,3 +112,7 @@ Helpful links that I used to figure this out.
 - https://learntdd.in/vue/
 - http://kakts-tec.hatenablog.com/entry/2018/10/05/012645
 - https://qiita.com/7110/items/0721525ed6ccc263768b
+
+### If are you so inclined. :)
+
+<a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/ksp"><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a Book"><span style="margin-left:5px;font-size:28px !important;">Buy me a Book</span></a>
