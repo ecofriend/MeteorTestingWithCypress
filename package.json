@@ -26,13 +26,13 @@
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "@cypress/webpack-preprocessor": "^5.2.1",
-    "babel-loader": "^8.1.0",
+    "babel-loader": "^8.3.0",
     "chai": "^4.2.0",
-    "css-loader": "^3.5.3",
+    "css-loader": "^6.7.3",
     "cypress": "^4.5.0",
     "cypress-vue-unit-test": "^2.0.1",
-    "vue-loader": "^15.9.2",
+    "vue-loader": "^17.0.1",
     "vue-template-compiler": "^2.6.11",
-    "webpack": "^4.43.0"
+    "webpack": "^5.75.0"
   }
 }
