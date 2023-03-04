@@ -29,7 +29,7 @@
     "babel-loader": "^8.1.0",
     "chai": "^4.2.0",
     "css-loader": "^3.5.3",
-    "cypress": "^4.5.0",
+    "cypress": "^4.12.1",
     "cypress-vue-unit-test": "^2.0.1",
     "vue-loader": "^15.9.2",
     "vue-template-compiler": "^2.6.11",
